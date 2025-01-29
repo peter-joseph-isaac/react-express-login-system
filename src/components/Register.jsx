@@ -7,11 +7,11 @@ function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirm, setConfirm] = useState('');
+    const [confirmPassword, setConfirm] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        register(name, email, password);
+        register(name, email, password, confirmPassword);
     }
 
     function handleNameChange(e) {
@@ -57,16 +57,14 @@ function Register() {
                 />
                 <input
                     type="password"
-                    value={confirm}
+                    value={confirmPassword}
                     onChange={handleConfirmChange}
                     placeholder="Confirm Password"
                     required
                 />
                 <button type="submit">Sign Up</button>
             </form>
-            <h3>
-                Already have an account? Login <a href="/login">here</a>
-            </h3>
+
         </>
     );
 }

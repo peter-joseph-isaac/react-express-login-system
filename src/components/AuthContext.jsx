@@ -6,33 +6,53 @@ const AuthContext = createContext();
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
-    async function register(name, email, password) {
+    async function register(name, email, password, confirmPassword) {
         try {
-            const response = await axios.post('http://localhost:3001/register', { name, email, password }, { withCredentials: true });
+            const response = await axios.post('http://localhost:3001/register', { name, email, password, confirmPassword }, { withCredentials: true });
 
             if (response.data.success) {
-                setUser(response.data.user); // Assuming the user data is returned here
-                alert(response.data.user.name); // Show success message
+                // If login is successful, update the state with the user data
+                alert("Registration successful");
+                setUser(response.data.user);  // Store the user data in context/state
+            } else {
+                // If login fails, display the error message from the backend
+                alert(response.data.message || "An error occurred");
             }
         } catch (error) {
-            if (error.response && error.response.status === 400) {
-                alert("400");
+            // If there's an error during the request, display the error
+            if (error.response && error.response.data) {
+                alert(error.response.data.message || "An error occurred");
             } else {
-                alert(error);
-                console.error('Registration error:', error);
+                alert("An error occurred");
             }
+            console.error("Registration error:", error);
         }
     }
 
     async function login(email, password) {
-        const response = await axios.post('http://localhost:3001/login', { email, password }, { withCredentials: true });
+        try {
+            // Sending a POST request to the backend with the email and password
+            const response = await axios.post('http://localhost:3001/login', { email, password }, { withCredentials: true });
 
-        if (response.data.success) {
-            setUser(response.data.user);
-        } else {
-            alert("Error");
+            if (response.data.success) {
+                // If login is successful, update the state with the user data
+                alert("Login successful");
+                setUser(response.data.user);  // Store the user data in context/state
+            } else {
+                // If login fails, display the error message from the backend
+                alert(response.data.message || "An error occurred");
+            }
+        } catch (error) {
+            // If there's an error during the request, display the error
+            if (error.response && error.response.data) {
+                alert(error.response.data.message || "An error occurred");
+            } else {
+                alert("An error occurred");
+            }
+            console.error("Login error:", error);
         }
     }
+
 
     async function logout() {
         setUser(null);

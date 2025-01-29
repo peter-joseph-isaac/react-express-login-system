@@ -1,23 +1,34 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import { useAuth } from './components/AuthContext';
 import axios from 'axios';
 import Login from './components/Login';
 import Protected from './components/Protected';
 import './App.css';
 
+let hasFetched = false; // Prevents unnecessary duplicate requests.
 
 function App() {
   const { user, setUser } = useAuth();
 
   async function fetchProfile() {
-    const response = await axios.get('http://localhost:3001/profile', { withCredentials: true });
-    if (response.data) {
-      alert(response.data);
-      //setUser(response.data);
+    if (hasFetched) return;
+    hasFetched = true;
+
+    try {
+      const response = await axios.get('http://localhost:3001/profile', { withCredentials: true });
+
+      if (response.data && response.data.email) {
+        setUser(response.data);
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      // console.error('Failed to fetch profile:', error);
+      setUser(null);
     }
   }
 
-  useEffect(function () {
+  useEffect(() => {
     fetchProfile();
   }, [setUser]);
 

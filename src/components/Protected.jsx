@@ -12,8 +12,7 @@ function Protected() {
     return (
         <>
             <div>
-                Welcome, {user.name}, {user.email} YEAH <br />
-                <img src={user.avi} alt="User Avatar" />
+                Welcome, {user.name}, {user.email} <br />
             </div>
             <button onClick={handleLogout}>Logout</button>
         </>
