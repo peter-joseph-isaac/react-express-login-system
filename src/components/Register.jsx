@@ -32,7 +32,8 @@ function Register() {
 
     return (
         <>
-            Hey there!
+            <div className="top-form">Sign Up Below</div>
+            <br />
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
