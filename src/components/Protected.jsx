@@ -10,12 +10,13 @@ function Protected() {
     }
 
     return (
-        <>
-            <div>
-                Welcome, {user.name}, {user.email} <br />
-            </div>
-            <button onClick={handleLogout}>Logout</button>
-        </>
+    <div className="user-container">
+        <div className="user-info">
+            <h2>Welcome, {user.name}!</h2>
+            <p>{user.email}</p>
+        </div>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+    </div>    
     );
 }
 

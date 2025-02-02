@@ -26,11 +26,11 @@ function Login() {
     }
 
     return (
-        <>
+        <div className="login-container">
+        <div className="login-card">
             {toggle ? (
-                <div>
-                    <div className="top-form">Welcome! Please Login!</div>
-                    <br />
+                <>
+                    <div className="top-form">Please Login!</div>
                     <form onSubmit={handleLoginSubmit}>
                         <input
                             type="text"
@@ -48,26 +48,22 @@ function Login() {
                         />
                         <button type="submit">Login</button>
                     </form>
-                      <br />
-                        <div className="bottom-form">Don't have an account? Sign up{' '}
-                            <span onClick={handleToggle} style={{ cursor: 'pointer', color: 'blue' }}>
-                                here
-                            </span>
-                        </div>
-                </div>
+                    <div className="bottom-form">
+                        Don't have an account? Sign up{' '}
+                        <span onClick={handleToggle}>here</span>
+                    </div>
+                </>
             ) : (
-                <div>
+                <>
                     <Register />
-                    <br />
-                      <div className="bottom-form">Already have an account? Login{' '}
-                            <span onClick={handleToggle} style={{ cursor: 'pointer', color: 'blue' }}>
-                                here
-                            </span>
-                      </div>
-                    
-                </div>
+                    <div className="bottom-form">
+                        Already have an account? Login{' '}
+                        <span onClick={handleToggle}>here</span>
+                    </div>
+                </>
             )}
-        </>
+        </div>
+    </div>    
     );
 }
 

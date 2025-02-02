@@ -56,8 +56,6 @@ app.get('/profile', (req, res) => {
   }
 });
 
-
-
 function sanitizeInput(input) {
   return sanitizeHtml(input, {
     allowedTags: [],  
@@ -96,7 +94,6 @@ app.post('/login', async (req, res) => {
     res.status(500).send({ success: false, message: 'Error during the login process' });
   }
 });
-
 
 app.post('/register', async (req, res) => {
   let name = req.body.name;
@@ -154,8 +151,6 @@ app.post('/logout', (req, res) => {
     console.log('User logged out');
   });
 });
-
-console.log('Mongo URI:', process.env.MONGO_URI);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

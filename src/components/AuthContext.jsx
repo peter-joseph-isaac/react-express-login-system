@@ -11,15 +11,11 @@ function AuthProvider({ children }) {
             const response = await axios.post('http://localhost:3001/register', { name, email, password, confirmPassword }, { withCredentials: true });
 
             if (response.data.success) {
-                // If login is successful, update the state with the user data
-                alert("Registration successful");
-                setUser(response.data.user);  // Store the user data in context/state
+                setUser(response.data.user); 
             } else {
-                // If login fails, display the error message from the backend
                 alert(response.data.message || "An error occurred");
             }
         } catch (error) {
-            // If there's an error during the request, display the error
             if (error.response && error.response.data) {
                 alert(error.response.data.message || "An error occurred");
             } else {
@@ -31,19 +27,14 @@ function AuthProvider({ children }) {
 
     async function login(email, password) {
         try {
-            // Sending a POST request to the backend with the email and password
             const response = await axios.post('http://localhost:3001/login', { email, password }, { withCredentials: true });
 
             if (response.data.success) {
-                // If login is successful, update the state with the user data
-                alert("Login successful");
-                setUser(response.data.user);  // Store the user data in context/state
+                setUser(response.data.user); 
             } else {
-                // If login fails, display the error message from the backend
                 alert(response.data.message || "An error occurred");
             }
         } catch (error) {
-            // If there's an error during the request, display the error
             if (error.response && error.response.data) {
                 alert(error.response.data.message || "An error occurred");
             } else {

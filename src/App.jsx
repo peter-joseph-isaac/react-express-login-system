@@ -23,7 +23,7 @@ function App() {
         setUser(null);
       }
     } catch (error) {
-      // console.error('Failed to fetch profile:', error);
+      console.error('There has been an Error', error);
       setUser(null);
     }
   }
