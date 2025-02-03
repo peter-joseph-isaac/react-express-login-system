@@ -3,8 +3,6 @@
 A simple and efficient full-stack login and registration system built with **React**, **Express.js**, and **MongoDB**.
 
 
-**Live Demo**  
-
 ---
 
 ## **Table of Contents**
@@ -81,7 +79,6 @@ npm install
   ```
   MONGO_URI=YOUR-MONGODB-URL  
   SESSION_SECRET=YOUR-SESSION-SECRET
-  PORT=5000
   ```
 
 4. Start the application:  
