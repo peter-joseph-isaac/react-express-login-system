@@ -10,6 +10,7 @@ const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const sanitizeHtml = require('sanitize-html');
+const path = require('path');
 
 const corsOptions = {
   origin: 'http://localhost:5173',
@@ -28,6 +29,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+
+app.use(express.static(path.join(__dirname, '/dist')));
 
 const uri = process.env.MONGO_URI;
 let client;

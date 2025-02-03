@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author": "@owpji Peter Joseph Isaac",
+  "author": "@owpji Peter Isaac",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
