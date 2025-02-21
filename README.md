@@ -134,5 +134,5 @@ This project is licensed under the MIT License.
 For questions or feedback, feel free to reach out:
 
 **Peter Isaac**  
-- Linkedin: [@owpji](https://www.linkedin.com/in/peter-joseph-isaac)
-- GitHub: [@owpji](https://github.com/owpji)
+- Linkedin: [https://www.linkedin.com/in/peter-joseph-isaac](https://www.linkedin.com/in/peter-joseph-isaac)
+- GitHub: [https://github.com/peter-joseph-isaac](https://github.com/peter-joseph-isaac)
