@@ -1,8 +1,11 @@
-require('dotenv').config({ path: '../.env' }); 
+const path = require('path');
+const dotenv = require('dotenv');
+
+const result = dotenv.config({ path: path.join(__dirname, '.env') });
 
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -10,7 +13,7 @@ const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const sanitizeHtml = require('sanitize-html');
-const path = require('path');
+
 
 const corsOptions = {
   origin: 'http://localhost:5173',
