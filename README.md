@@ -16,9 +16,8 @@ https://react-express-login.onrender.com
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+6. [License](#license)
+7. [Contact](#contact)
 
 ---
 
@@ -108,23 +107,7 @@ npm start
 2. Enter your credentials.
 3. Upon successful login, access protected routes or features.
 
----
-
-
-## **Contributing**
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix:
-git checkout -b feature-name
-3. Commit your changes:
-git commit -m "Add feature-name"
-4. Push to your branch:
-git push origin feature-name
-5. Open a pull request.
-
----
+---  
 
 ## **License**
 
