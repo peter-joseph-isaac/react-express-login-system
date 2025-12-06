@@ -77,7 +77,7 @@ npm install
 
 
 3. Configure environment variables:
-- Create a `.env` file in the root directory with the following variables:
+- Create a `.env` file in the backend folder with the following variables:
   ```
   MONGO_URI=YOUR-MONGODB-URL  
   SESSION_SECRET=YOUR-SESSION-SECRET
