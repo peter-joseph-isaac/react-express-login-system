@@ -14,8 +14,8 @@ function Protected() {
         <div className="user-info">
             <h2>Welcome, {user.name}!</h2>
             <p>{user.email}</p>
+             <button className="logout-button" onClick={handleLogout}>Logout</button>
         </div>
-        <button className="logout-button" onClick={handleLogout}>Logout</button>
     </div>    
     );
 }
